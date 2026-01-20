@@ -7,7 +7,7 @@ from datetime import datetime
 import sender 
 
 # --- CONFIGURATION ---
-API_TOKEN = '8510819274:AAGirN9ElrQVPrAKlP3DDio-uhKI8338z-U'  # Bot token
+API_TOKEN = '8510819274:AAHSTv4XIizaR_0b_iu18eKR-T-VDBHT8_w'  # Bot token
 ADMIN_ID = 5762886443               # Admin User ID (Numeric)
 ADMIN_USERNAME = "@md_bro2k"       # Admin Username
 
@@ -289,4 +289,7 @@ def cancel_action(call):
 
 if __name__ == "__main__":
     keep_alive()
-    bot.infinity_polling(skip_pending=True)
+    # পোলিং শুরু করার আগে কিছুক্ষণ গ্যাপ রাখা
+    import time
+    time.sleep(2) 
+    bot.infinity_polling(skip_pending=True, timeout=10, long_polling_timeout=5)
